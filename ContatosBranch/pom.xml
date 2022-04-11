@@ -1,0 +1,72 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>ContatosBranch</groupId>
+  <artifactId>ContatosBranch</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <build>
+    <sourceDirectory>src</sourceDirectory>
+    <plugins>
+      <plugin>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.8.1</version>
+        <configuration>
+          <release>15</release>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+  
+  <repositories>
+		<repository>
+			<id>maven</id>
+			<url>https://mvnrepository.com/artifact/com.h2database/h2</url>
+		</repository>
+	</repositories>
+  
+  <dependencies>
+  
+<!--  https://mvnrepository.com/artifact/com.toedter/jcalendar  -->
+	<dependency>
+		<groupId>com.toedter</groupId>
+		<artifactId>jcalendar</artifactId>
+		<version>1.4</version>
+	</dependency>
+	
+	<!-- https://mvnrepository.com/artifact/com.h2database/h2 -->
+<dependency>
+    <groupId>com.h2database</groupId>
+    <artifactId>h2</artifactId>
+    <version>1.4.200</version>
+</dependency>
+	
+
+	<!-- https://mvnrepository.com/artifact/commons-codec/commons-codec -->
+	<dependency>
+		<groupId>commons-codec</groupId>
+		<artifactId>commons-codec</artifactId>
+		<version>1.9</version>
+	</dependency>
+	<!-- https://mvnrepository.com/artifact/com.jgoodies/jgoodies-forms -->
+	<dependency>
+		<groupId>com.jgoodies</groupId>
+		<artifactId>jgoodies-forms</artifactId>
+		<version>1.8.0</version>
+	</dependency>
+
+	<!-- https://mvnrepository.com/artifact/org.eclipse/swt -->
+	<dependency>
+		<groupId>org.eclipse</groupId>
+		<artifactId>swt</artifactId>
+		<version>3.3.0-v3346</version>
+	</dependency>
+
+	<!-- https://mvnrepository.com/artifact/org.eclipse.swt/org.eclipse.swt.gtk.linux.x86_64 -->
+	<dependency>
+		<groupId>org.eclipse.swt</groupId>
+		<artifactId>org.eclipse.swt.gtk.linux.x86_64</artifactId>
+		<version>4.3</version>
+	</dependency>
+
+
+</dependencies>
+</project>

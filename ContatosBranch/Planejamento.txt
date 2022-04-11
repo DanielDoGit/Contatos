@@ -1,0 +1,29 @@
+						Parte 1 - Tela dos Contatos
+
+1 - Fazer a tela de pesquisa de cidade 	-> Molde para as demais telas de pesquisa
+2 - Fazer a tela de inclusão de cidade 	-> abrir uma janela de cadastro de cidade 
+3 - Fazer a tela de exclusão de cidade 	-> abrir uma tela de pesquisar -> Selecionar uma cidade e deletar
+4 - Fazer a tela de edição de cidade	-> Abrir uma tela de pesquisar -> Selecionar uma cidade para editar
+5 - Refazer a camada de negócio de contatos
+6 - Realizar um CRUD com Cidade -> Coletar a cidade Selecionada no campo 
+
+-------------------------------------------------------------------------------------------------------------
+						Parte 2 - painel de Controle
+						
+1 - Realizar uma tela painel de controle 
+	- Abriga programa Contatos
+	- Abriga Gerador de arquivo Base64
+	
+-------------------------------------------------------------------------------------------------------------
+						Parte 3 - Tela Conversor de base 64
+						
+1 - Bloco 1: Conversor de arquivo para Base64
+	- Caminho de entrada e de saída do arquivo 
+
+2 - Bloco 2: Conversor de Base64 para arquivo
+	- Caminho de entrada e de saida do arquivo
+
+3 - Bloco 3:
+	- Caixa de texto para conversão de texto para Base64	
+
+ 
