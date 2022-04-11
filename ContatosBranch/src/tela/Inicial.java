@@ -18,7 +18,7 @@ import javax.swing.UIManager;
 import java.awt.Color;
 import java.awt.SystemColor;
 
-public class Teste2 extends JFrame {
+public class Inicial extends JFrame {
 
 	private JPanel contentPane;
 	private JTextField caixacodigo;
@@ -33,7 +33,9 @@ public class Teste2 extends JFrame {
 	/**
 	 * Launch the application.
 	 */
-	public static void main(String[] args) {
+	public Inicial() {
+		// TODO Auto-generated constructor stub
+	 
 		try {
 			for (UIManager.LookAndFeelInfo info : UIManager.getInstalledLookAndFeels()) {
 				if ("Nimbus".equals(info.getName())) {
@@ -47,22 +49,14 @@ public class Teste2 extends JFrame {
 		JOptionPane.showMessageDialog(null, e, "Erro",0);
 		}
 		
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					Teste2 frame = new Teste2();
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
+		InicialAction();
+		setVisible(true);
 	}
 
 	/**
 	 * Create the frame.
 	 */
-	public Teste2() {
+	public void InicialAction() {
 		setBackground(SystemColor.inactiveCaption);
 		setTitle("Contatos 1.15 - Dark Mode");
 		setIconImage(Toolkit.getDefaultToolkit().getImage("./icones/telefone"));
