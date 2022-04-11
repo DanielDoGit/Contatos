@@ -5,6 +5,7 @@ import java.awt.Color;
 import java.awt.FlowLayout;
 import java.awt.Font;
 import java.awt.GridLayout;
+import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.FileOutputStream;
@@ -16,6 +17,7 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JCheckBox;
 import javax.swing.JFileChooser;
@@ -100,6 +102,8 @@ public class RunDeprecied {
 		//Font b = new Font(null, Font.BOLD, 16);
 		
 		JFrame janela = new JFrame("Contatos da semana "+version+" - Dark Mode Edition");
+		janela.setIconImage(Toolkit.getDefaultToolkit().getImage("./ContatosBranch/icones/telefone.png"));
+		
 		JPanel painel = new JPanel();
 		painel.setBackground(colorBlack);
 		painel.setLayout(null);
@@ -130,7 +134,7 @@ public class RunDeprecied {
 		painel.add(informacaoDoNome);
 		
 		// campo Texto: Contatos novos
-		JLabel textoContatosNovos = new JLabel("Contatos novos: ");
+		JLabel textoContatosNovos = new JLabel("Contatos novos:");
 		textoContatosNovos.setBounds(25, 90, 120, 20);
 		textoContatosNovos.setForeground(colorWhite);
 		textoContatosNovos.setBackground(colorBlack);
@@ -147,7 +151,7 @@ public class RunDeprecied {
 		painel.add(ticaContatoNovo);
 
 		// campo Texto: Contatos novos
-		JLabel textoContatosInativos = new JLabel("Contatos desligados: ");
+		JLabel textoContatosInativos = new JLabel("Contatos Inativos:");
 		textoContatosInativos.setBounds(25, 130, 185, 20);
 		textoContatosInativos.setForeground(colorWhite);
 		painel.add(textoContatosInativos);
