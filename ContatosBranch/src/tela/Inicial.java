@@ -32,8 +32,9 @@ public class Inicial extends JFrame {
 
 	/**
 	 * Launch the application.
+	 * @throws Exception 
 	 */
-	public Inicial() {
+	public Inicial() throws Exception {
 		// TODO Auto-generated constructor stub
 	 
 		try {
@@ -50,13 +51,15 @@ public class Inicial extends JFrame {
 		}
 		
 		InicialAction();
+		setLocationRelativeTo(null);
 		setVisible(true);
+		
 	}
 
 	/**
 	 * Create the frame.
 	 */
-	public void InicialAction() {
+	public void InicialAction() throws Exception{
 		setBackground(SystemColor.inactiveCaption);
 		setTitle("Contatos 1.15 - Dark Mode");
 		setIconImage(Toolkit.getDefaultToolkit().getImage("./icones/telefone"));
@@ -68,24 +71,24 @@ public class Inicial extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		JLabel lblCodigo = new JLabel("Codigo");
+		JLabel lblCodigo = new JLabel("Código");
 		lblCodigo.setForeground(SystemColor.text);
-		lblCodigo.setFont(new Font("DejaVu Sans Condensed", Font.PLAIN, 14));
-		lblCodigo.setBounds(301, 11, 49, 17);
+		lblCodigo.setFont(new Font("DejaVu Sans Condensed", Font.BOLD, 14));
+		lblCodigo.setBounds(310, 11, 49, 17);
 		contentPane.add(lblCodigo);
 		
 		caixacodigo = new JTextField();
 		caixacodigo.setEnabled(false);
 		caixacodigo.setEditable(false);
 		caixacodigo.setFont(new Font("DejaVu Sans Condensed", Font.PLAIN, 14));
-		caixacodigo.setBounds(362, 6, 56, 27);
+		caixacodigo.setBounds(370, 6, 56, 27);
 		contentPane.add(caixacodigo);
 		caixacodigo.setColumns(10);
 		
 		JLabel lblEmpresa = new JLabel("Empresa");
 		lblEmpresa.setForeground(SystemColor.text);
-		lblEmpresa.setFont(new Font("DejaVu Sans Condensed", Font.PLAIN, 14));
-		lblEmpresa.setBounds(38, 61, 60, 15);
+		lblEmpresa.setFont(new Font("DejaVu Sans Condensed", Font.BOLD, 14));
+		lblEmpresa.setBounds(26, 61, 74, 15);
 		contentPane.add(lblEmpresa);
 		
 		caixaEmpresa = new JTextField();
@@ -97,8 +100,8 @@ public class Inicial extends JFrame {
 		
 		JLabel lblConta = new JLabel("Contatos Novos");
 		lblConta.setForeground(SystemColor.text);
-		lblConta.setFont(new Font("DejaVu Sans Condensed", Font.PLAIN, 14));
-		lblConta.setBounds(38, 100, 106, 15);
+		lblConta.setFont(new Font("DejaVu Sans Condensed", Font.BOLD, 14));
+		lblConta.setBounds(26, 100, 115, 15);
 		contentPane.add(lblConta);
 		
 		caixaContatosNovos = new JTextField();
@@ -108,8 +111,8 @@ public class Inicial extends JFrame {
 		
 		JLabel lblContatosInativos = new JLabel("Contatos Inativos");
 		lblContatosInativos.setForeground(SystemColor.text);
-		lblContatosInativos.setFont(new Font("DejaVu Sans Condensed", Font.PLAIN, 14));
-		lblContatosInativos.setBounds(38, 139, 115, 15);
+		lblContatosInativos.setFont(new Font("DejaVu Sans Condensed", Font.BOLD, 14));
+		lblContatosInativos.setBounds(26, 139, 127, 15);
 		contentPane.add(lblContatosInativos);
 		
 		caixaContatosInativos = new JTextField();
@@ -119,8 +122,8 @@ public class Inicial extends JFrame {
 		
 		lblEndereco = new JLabel("Endereço");
 		lblEndereco.setForeground(SystemColor.text);
-		lblEndereco.setFont(new Font("DejaVu Sans Condensed", Font.PLAIN, 14));
-		lblEndereco.setBounds(38, 178, 115, 15);
+		lblEndereco.setFont(new Font("DejaVu Sans Condensed", Font.BOLD, 14));
+		lblEndereco.setBounds(26, 178, 115, 15);
 		contentPane.add(lblEndereco);
 		
 		caixaEndereco = new JTextField();
@@ -129,6 +132,7 @@ public class Inicial extends JFrame {
 		contentPane.add(caixaEndereco);
 		
 		lblN = new JLabel("Nº");
+		lblN.setFont(new Font("DejaVu Sans", Font.BOLD, 14));
 		lblN.setForeground(SystemColor.text);
 		lblN.setBounds(602, 178, 32, 15);
 		contentPane.add(lblN);

@@ -22,24 +22,34 @@ public class Teste {
 		try {
 	
 			
-			Process processo = Runtime.getRuntime().exec("java -jar /home/limalinux/arquivos/h2-2022-01-17/h2/bin/h2-2.1.210.jar");
-			URL link = new URL("http://127.0.1.1:8082/login.do?jsessionid=74bbee6a51a298ef0ce9352ad524477d");
-			BufferedReader leituraDoSite = new BufferedReader(new InputStreamReader(link.openStream()));
-			ArrayList<String> lista = new ArrayList<String>();
+//			Process processo = Runtime.getRuntime().exec("java -jar /home/limalinux/arquivos/h2-2022-01-17/h2/bin/h2-2.1.210.jar");
+//			Process processo = Runtime.getRuntime().exec("");
+//			processo.pid();
+//			
+//			InputStream inputStream = processo.getInputStream();
+//			byte[] bytes = inputStream.readAllBytes();
+//			String a = new String(bytes);
+//			System.out.println(a);
+			new Inicial();
 			
-			String aux = null;
-			while ((aux = leituraDoSite.readLine()) != null) {
-				lista.add(aux);
-			}
+
+//			URL link = new URL("https://www.google.com/search?q=bambu&oq=bambu&aqs=chrome..69i57.2064j0j9&sourceid=chrome&ie=UTF-8");
+//			BufferedReader leituraDoSite = new BufferedReader(new InputStreamReader(link.openStream()));
+//			ArrayList<String> lista = new ArrayList<String>();
+//			
+//			String aux = null;
+//			while ((aux = leituraDoSite.readLine()) != null) {
+//				lista.add(aux);
+//			}
+//			
+//			for(String a : lista) {
+//				System.out.println(a);
+//			}
 			
-			for(String a : lista) {
-				System.out.println(a);
-			}
 			
 			
 			
-			
-		}catch(IOException e) {
+		}catch(Exception e) {
 			e.printStackTrace();
 		}
 		
