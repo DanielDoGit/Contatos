@@ -1,4 +1,4 @@
-package CamadaNegocio;
+package camadaNegocio;
 
 import java.util.ArrayList;
 

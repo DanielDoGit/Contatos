@@ -33,8 +33,8 @@ import com.toedter.calendar.JCalendar;
 import com.toedter.calendar.JDateChooser;
 import com.toedter.calendar.JSpinnerDateEditor;
 
-import CamadaNegocio.CuidaDoArray;
-import CamadaNegocio.Dados;
+import camadaNegocio.CuidaDoArray;
+import camadaNegocio.Dados;
 import relatorios.CriaArquivo;
 import relatorios.ImprimirTexto;
 

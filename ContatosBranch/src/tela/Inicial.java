@@ -9,7 +9,13 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.border.TitledBorder;
 
+import com.toedter.calendar.JCalendar;
+import com.toedter.calendar.JDateChooser;
+
 import java.awt.Toolkit;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 
@@ -26,7 +32,7 @@ import javax.swing.JTextArea;
 import javax.swing.JDesktopPane;
 import java.awt.Rectangle;
 
-public class Inicial extends JFrame {
+public abstract class Inicial extends JFrame {
 
 	private JPanel contentPane;
 	private JTextField caixacodigo;
@@ -41,18 +47,272 @@ public class Inicial extends JFrame {
 	private JTextField textFieldDescricaoCidade;
 	private JTextField textFieldUfCidade;
 	private JTextField textFieldBairro;
-	private JLayeredPane layeredPane;
+	//private JLayeredPane layeredPane;
 	private JPanel panel;
 	private JScrollPane scrollPane;
 	private JTextArea textArea;
 	private JLabel lblCep;
-	private JTextField textField;
+	private JTextField textFieldCep;
 	private JLabel lblObservaes;
+	private JButton btnPesquisar, btnInserir, btnEditar, btnExcluir, btnFazerRelatorio, btnInserirRegistro;
+	private JDateChooser dataescolhaper01, dataescolhaper02;
+	private Calendar calendarioper01, calendarioper02;
+	private SimpleDateFormat format = new SimpleDateFormat("dd-MM-yyyy");
+	private JLabel lblDe;
+
+	public JPanel getContentPane() {
+		return contentPane;
+	}
+
+	public void setContentPane(JPanel contentPane) {
+		this.contentPane = contentPane;
+	}
+
+	public JTextField getCaixacodigo() {
+		return caixacodigo;
+	}
+
+	public void setCaixacodigo(JTextField caixacodigo) {
+		this.caixacodigo = caixacodigo;
+	}
+
+	public JTextField getCaixaEmpresa() {
+		return caixaEmpresa;
+	}
+
+	public void setCaixaEmpresa(JTextField caixaEmpresa) {
+		this.caixaEmpresa = caixaEmpresa;
+	}
+
+	public JTextField getCaixaContatosNovos() {
+		return caixaContatosNovos;
+	}
+
+	public void setCaixaContatosNovos(JTextField caixaContatosNovos) {
+		this.caixaContatosNovos = caixaContatosNovos;
+	}
+
+	public JTextField getCaixaContatosInativos() {
+		return caixaContatosInativos;
+	}
+
+	public void setCaixaContatosInativos(JTextField caixaContatosInativos) {
+		this.caixaContatosInativos = caixaContatosInativos;
+	}
+
+	public JLabel getLblEndereco() {
+		return lblEndereco;
+	}
+
+	public void setLblEndereco(JLabel lblEndereco) {
+		this.lblEndereco = lblEndereco;
+	}
+
+	public JTextField getCaixaEndereco() {
+		return caixaEndereco;
+	}
+
+	public void setCaixaEndereco(JTextField caixaEndereco) {
+		this.caixaEndereco = caixaEndereco;
+	}
+
+	public JLabel getLblN() {
+		return lblN;
+	}
+
+	public void setLblN(JLabel lblN) {
+		this.lblN = lblN;
+	}
+
+	public JTextField getTextFieldNumeroLogradouro() {
+		return textFieldNumeroLogradouro;
+	}
+
+	public void setTextFieldNumeroLogradouro(JTextField textFieldNumeroLogradouro) {
+		this.textFieldNumeroLogradouro = textFieldNumeroLogradouro;
+	}
+
+	public JTextField getTextFieldCodigoCidade() {
+		return textFieldCodigoCidade;
+	}
+
+	public void setTextFieldCodigoCidade(JTextField textFieldCodigoCidade) {
+		this.textFieldCodigoCidade = textFieldCodigoCidade;
+	}
+
+	public JTextField getTextFieldDescricaoCidade() {
+		return textFieldDescricaoCidade;
+	}
+
+	public void setTextFieldDescricaoCidade(JTextField textFieldDescricaoCidade) {
+		this.textFieldDescricaoCidade = textFieldDescricaoCidade;
+	}
+
+	public JTextField getTextFieldUfCidade() {
+		return textFieldUfCidade;
+	}
+
+	public void setTextFieldUfCidade(JTextField textFieldUfCidade) {
+		this.textFieldUfCidade = textFieldUfCidade;
+	}
+
+	public JTextField getTextFieldBairro() {
+		return textFieldBairro;
+	}
+
+	public void setTextFieldBairro(JTextField textFieldBairro) {
+		this.textFieldBairro = textFieldBairro;
+	}
+
+	public JPanel getPanel() {
+		return panel;
+	}
+
+	public void setPanel(JPanel panel) {
+		this.panel = panel;
+	}
+
+	public JScrollPane getScrollPane() {
+		return scrollPane;
+	}
+
+	public void setScrollPane(JScrollPane scrollPane) {
+		this.scrollPane = scrollPane;
+	}
+
+	public JTextArea getTextArea() {
+		return textArea;
+	}
+
+	public void setTextArea(JTextArea textArea) {
+		this.textArea = textArea;
+	}
+
+	public JLabel getLblCep() {
+		return lblCep;
+	}
+
+	public void setLblCep(JLabel lblCep) {
+		this.lblCep = lblCep;
+	}
+
+	public JTextField getTextFieldCep() {
+		return textFieldCep;
+	}
+
+	public void setTextFieldCep(JTextField textFieldCep) {
+		this.textFieldCep = textFieldCep;
+	}
+
+	public JLabel getLblObservaes() {
+		return lblObservaes;
+	}
+
+	public void setLblObservaes(JLabel lblObservaes) {
+		this.lblObservaes = lblObservaes;
+	}
+
+	public JButton getBtnPesquisar() {
+		return btnPesquisar;
+	}
+
+	public void setBtnPesquisar(JButton btnPesquisar) {
+		this.btnPesquisar = btnPesquisar;
+	}
+
+	public JButton getBtnInserir() {
+		return btnInserir;
+	}
+
+	public void setBtnInserir(JButton btnInserir) {
+		this.btnInserir = btnInserir;
+	}
+
+	public JButton getBtnEditar() {
+		return btnEditar;
+	}
+
+	public void setBtnEditar(JButton btnEditar) {
+		this.btnEditar = btnEditar;
+	}
+
+	public JButton getBtnExcluir() {
+		return btnExcluir;
+	}
+
+	public void setBtnExcluir(JButton btnExcluir) {
+		this.btnExcluir = btnExcluir;
+	}
+
+	public JButton getBtnFazerRelatorio() {
+		return btnFazerRelatorio;
+	}
+
+	public void setBtnFazerRelatorio(JButton btnFazerRelatorio) {
+		this.btnFazerRelatorio = btnFazerRelatorio;
+	}
+
+	public JButton getBtnInserirRegistro() {
+		return btnInserirRegistro;
+	}
+
+	public void setBtnInserirRegistro(JButton btnInserirRegistro) {
+		this.btnInserirRegistro = btnInserirRegistro;
+	}
+
+	public JDateChooser getDataescolhaper01() {
+		return dataescolhaper01;
+	}
+
+	public void setDataescolhaper01(JDateChooser dataescolhaper01) {
+		this.dataescolhaper01 = dataescolhaper01;
+	}
+
+	public JDateChooser getDataescolhaper02() {
+		return dataescolhaper02;
+	}
+
+	public void setDataescolhaper02(JDateChooser dataescolhaper02) {
+		this.dataescolhaper02 = dataescolhaper02;
+	}
+
+	public Calendar getCalendarioper01() {
+		return calendarioper01;
+	}
+
+	public void setCalendarioper01(Calendar calendarioper01) {
+		this.calendarioper01 = calendarioper01;
+	}
+
+	public Calendar getCalendarioper02() {
+		return calendarioper02;
+	}
+
+	public void setCalendarioper02(Calendar calendarioper02) {
+		this.calendarioper02 = calendarioper02;
+	}
+
+	public SimpleDateFormat getFormat() {
+		return format;
+	}
+
+	public void setFormat(SimpleDateFormat format) {
+		this.format = format;
+	}
+
+	public JLabel getLblDe() {
+		return lblDe;
+	}
+
+	public void setLblDe(JLabel lblDe) {
+		this.lblDe = lblDe;
+	}
 
 	/**
 	 * Launch the application.
 	 * @throws Exception 
 	 */
+	
 	public Inicial() throws Exception {
 		// TODO Auto-generated constructor stub
 	 
@@ -68,6 +328,10 @@ public class Inicial extends JFrame {
 
 		JOptionPane.showMessageDialog(null, e, "Erro",0);
 		}
+		
+		calendarioper01 = Calendar.getInstance();
+		calendarioper02 = Calendar.getInstance();
+		calendarioper02.add(Calendar.DAY_OF_MONTH, 7);
 		
 		InicialAction();
 		setLocationRelativeTo(null);
@@ -197,22 +461,22 @@ public class Inicial extends JFrame {
 		lblCidade.setBounds(26, 295, 115, 15);
 		contentPane.add(lblCidade);
 		
-		JButton btnInserir = new JButton("Inserir");
+		btnInserir = new JButton("Inserir");
 		btnInserir.setIcon(new ImageIcon("./icones/insert.png"));
 		btnInserir.setBounds(173, 337, 100, 34);
 		contentPane.add(btnInserir);
 		
-		JButton btnEditar = new JButton("Editar");
+		btnEditar = new JButton("Editar");
 		btnEditar.setIcon(new ImageIcon("./icones/edit.png"));
 		btnEditar.setBounds(314, 337, 100, 34);
 		contentPane.add(btnEditar);
 		
-		JButton btnExcluir = new JButton("Excluir");
+		btnExcluir = new JButton("Excluir");
 		btnExcluir.setIcon(new ImageIcon("./icones/delete.png"));
 		btnExcluir.setBounds(452, 337, 100, 34);
 		contentPane.add(btnExcluir);
 		
-		JButton btnPesquisar = new JButton("Pesquisar");
+		btnPesquisar = new JButton("Pesquisar");
 		btnPesquisar.setIcon(new ImageIcon("./icones/lupa.png"));
 		btnPesquisar.setBounds(587, 337, 128, 34);
 		contentPane.add(btnPesquisar);
@@ -244,10 +508,47 @@ public class Inicial extends JFrame {
 		lblObservaes.setBounds(97, 5, 135, 15);
 		panel.add(lblObservaes);
 		
-		textField = new JTextField();
-		textField.setColumns(10);
-		textField.setBounds(163, 211, 196, 27);
-		contentPane.add(textField);
+		btnInserirRegistro = new JButton("Inserir Registro");
+		btnInserirRegistro.setBounds(512, 17, 140, 38);
+		panel.add(btnInserirRegistro);
+		
+		btnFazerRelatorio = new JButton("Fazer relatório");
+		btnFazerRelatorio.setBounds(512, 74, 140, 38);
+		panel.add(btnFazerRelatorio);
+		
+		textFieldCep = new JTextField();
+		textFieldCep.setColumns(10);
+		textFieldCep.setBounds(163, 211, 196, 27);
+		contentPane.add(textFieldCep);
+		
+		dataescolhaper01 = new JDateChooser();
+		dataescolhaper01.setBounds(308, 34, 130, 28);
+		dataescolhaper01.setDate(calendarioper01.getTime());
+		dataescolhaper01.setDateFormatString("dd-MM-yyyy");
+		panel.add(dataescolhaper01);
+		
+		JLabel lblperiodo = new JLabel("Período");
+		lblperiodo.setForeground(Color.WHITE);
+		lblperiodo.setFont(new Font("DejaVu Sans Condensed", Font.BOLD, 14));
+		lblperiodo.setBounds(308, 5, 135, 15);
+		panel.add(lblperiodo);
+		
+		dataescolhaper02 = new JDateChooser();
+		dataescolhaper02.setBounds(308, 84, 130, 28);
+		panel.add(dataescolhaper02);
+		dataescolhaper02.setDate(calendarioper02.getTime());
+		dataescolhaper02.setDateFormatString("dd-MM-yyyy");
+		
+		lblDe = new JLabel("De");
+		lblDe.setForeground(Color.WHITE);
+		lblDe.setFont(new Font("DejaVu Sans Condensed", Font.BOLD, 14));
+		lblDe.setBounds(277, 65, 37, 15);
+		panel.add(lblDe);
+		
+		
+		//System.out.println(format.format(calendarioper01.getTime()));
+		
+		
 		
 	
 	}

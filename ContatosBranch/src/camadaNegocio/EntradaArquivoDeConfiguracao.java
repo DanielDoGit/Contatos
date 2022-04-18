@@ -1,4 +1,4 @@
-package CamadaNegocio;
+package camadaNegocio;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -8,7 +8,7 @@ import java.io.PrintStream;
 import java.sql.SQLException;
 import java.util.Properties;
 
-import dao.cidade.GeradorConexao;
+import dao.GeradorConexao;
 import protecao.GeradorLogs;
 
 public class EntradaArquivoDeConfiguracao implements GeradorLogs{

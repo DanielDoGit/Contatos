@@ -5,7 +5,7 @@ import java.io.OutputStream;
 import java.io.PrintStream;
 import java.util.ArrayList;
 
-import CamadaNegocio.Dados;
+import camadaNegocio.Dados;
 
 public class ImprimirTexto {
 	

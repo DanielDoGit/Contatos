@@ -1,4 +1,4 @@
-package dao.cidade;
+package dao;
 
 import java.io.PrintStream;
 
@@ -6,7 +6,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
-import CamadaNegocio.EntradaArquivoDeConfiguracao;
+import camadaNegocio.EntradaArquivoDeConfiguracao;
 import protecao.GeradorLogs;
 
 public class GeradorConexao {

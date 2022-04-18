@@ -1,4 +1,4 @@
-package dao.cidade;
+package dao;
 
 import java.io.PrintStream;
 
@@ -10,7 +10,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Calendar;
 
-import CamadaNegocio.Cidade;
+import camadaNegocio.Cidade;
 import protecao.GeradorLogs;
 
 
